@@ -1,13 +1,20 @@
 # Generated Schemas
 
-Summary: 
+Summary:
+
 Create the JSON Schema in the templates directory first. Make use of common schema components
 from the templates/include directory where possible, including things like the telemetry environment,
-clientId, application block, or UUID patterns. 
-The filename should be templates/<namespace>/<doctype>/<doctype>.<version>.schema.json
+clientId, application block, or UUID patterns.
 
-Directory tree: 
-.
+Last month's commit Logs:
+
+* dda5d19d : Add schema for CITP's Pioneer study (#632) by akohlbre
+* 7ad71b31 : Add fissionEnabled to new uninstall ping (#631) by Jeff Klukas
+* 0f34b318 : Bug 1461690 - Add Uninstall Telemetry ping schema (#629) by Adam Gashlin
+* a48ef97e : Bug 1669208 - Add fissionEnabled field to environment by Arkadiusz Komarzewski
+* d8899256 : Note special handling of xfocsp-error-report (#630) by Jeff Klukas
+* 4d2855dd : Set docker version in CircleCI config (#628) by Will Kahn-Greene
+* 14390ddc : Remove edge-validator from CI (#626) by Anthony Miyaguchi.
 ├── CMakeLists.txt
 ├── CODE_OF_CONDUCT.md
 ├── Dockerfile
@@ -1563,13 +1570,3 @@ Directory tree:
         └── webpagetest-run.1.sample.pass.json
 
 496 directories, 1057 files
-
-Last month's commit Logs:
-
-* dda5d19d : Add schema for CITP's Pioneer study (#632) by akohlbre
-* 7ad71b31 : Add fissionEnabled to new uninstall ping (#631) by Jeff Klukas
-* 0f34b318 : Bug 1461690 - Add Uninstall Telemetry ping schema (#629) by Adam Gashlin
-* a48ef97e : Bug 1669208 - Add fissionEnabled field to environment by Arkadiusz Komarzewski
-* d8899256 : Note special handling of xfocsp-error-report (#630) by Jeff Klukas
-* 4d2855dd : Set docker version in CircleCI config (#628) by Will Kahn-Greene
-* 14390ddc : Remove edge-validator from CI (#626) by Anthony Miyaguchi
