@@ -104,11 +104,6 @@
                     "type": "STRING"
                   },
                   {
-                    "mode": "NULLABLE",
-                    "name": "foreign_install",
-                    "type": "INT64"
-                  },
-                  {
                     "description": "True or false depending on whether the add-on has binary components. This is always false since Firefox 60. This field is only available after the 'sessionstore-windows-restored' topic is notified.",
                     "mode": "NULLABLE",
                     "name": "has_binary_components",
@@ -166,16 +161,6 @@
                     "mode": "NULLABLE",
                     "name": "update_day",
                     "type": "INT64"
-                  },
-                  {
-                    "mode": "NULLABLE",
-                    "name": "user_disabled",
-                    "type": "INT64"
-                  },
-                  {
-                    "mode": "NULLABLE",
-                    "name": "version",
-                    "type": "STRING"
                   }
                 ],
                 "mode": "NULLABLE",
@@ -213,12 +198,6 @@
               },
               {
                 "fields": [
-                  {
-                    "description": "Cast into an integer via mozilla-schema-generator. See bug 1611027.",
-                    "mode": "NULLABLE",
-                    "name": "apply_background_updates",
-                    "type": "INT64"
-                  },
                   {
                     "mode": "NULLABLE",
                     "name": "user_disabled",
@@ -310,11 +289,6 @@
                 "mode": "NULLABLE",
                 "name": "description",
                 "type": "STRING"
-              },
-              {
-                "mode": "NULLABLE",
-                "name": "foreign_install",
-                "type": "INT64"
               },
               {
                 "description": "True or false depending on whether the theme has binary components. This is always false since Firefox 60.",
@@ -835,24 +809,6 @@
             ],
             "mode": "NULLABLE",
             "name": "update",
-            "type": "RECORD"
-          },
-          {
-            "description": "User preferences - limited to an allowlist defined in `toolkit/components/telemetry/app/TelemetryEnvironment.jsm`",
-            "fields": [
-              {
-                "mode": "NULLABLE",
-                "name": "key",
-                "type": "STRING"
-              },
-              {
-                "mode": "NULLABLE",
-                "name": "value",
-                "type": "STRING"
-              }
-            ],
-            "mode": "REPEATED",
-            "name": "user_prefs",
             "type": "RECORD"
           }
         ],
@@ -1655,135 +1611,9 @@
   {
     "fields": [
       {
-        "fields": [
-          {
-            "fields": [
-              {
-                "description": "The filename of the PDB symbol file",
-                "mode": "NULLABLE",
-                "name": "f0_",
-                "type": "STRING"
-              },
-              {
-                "description": "The debug ID of the DLL",
-                "mode": "NULLABLE",
-                "name": "f1_",
-                "type": "STRING"
-              }
-            ],
-            "mode": "REPEATED",
-            "name": "memory_map",
-            "type": "RECORD"
-          },
-          {
-            "fields": [
-              {
-                "fields": [
-                  {
-                    "description": "Module index, an index into the combinedStacks/memoryMap array, or -1 if not applicable",
-                    "mode": "NULLABLE",
-                    "name": "f0_",
-                    "type": "FLOAT64"
-                  },
-                  {
-                    "description": "Module offset, the RVA of the program counter for this stack frame.",
-                    "mode": "NULLABLE",
-                    "name": "f1_",
-                    "type": "FLOAT64"
-                  }
-                ],
-                "mode": "REPEATED",
-                "name": "list",
-                "type": "RECORD"
-              }
-            ],
-            "mode": "REPEATED",
-            "name": "stacks",
-            "type": "RECORD"
-          }
-        ],
         "mode": "NULLABLE",
-        "name": "combined_stacks",
-        "type": "RECORD"
-      },
-      {
-        "mode": "NULLABLE",
-        "name": "error_modules",
+        "name": "other_installs",
         "type": "INT64"
-      },
-      {
-        "fields": [
-          {
-            "mode": "NULLABLE",
-            "name": "is_startup",
-            "type": "BOOL"
-          },
-          {
-            "fields": [
-              {
-                "mode": "NULLABLE",
-                "name": "base_address",
-                "type": "STRING"
-              },
-              {
-                "mode": "NULLABLE",
-                "name": "file_version",
-                "type": "STRING"
-              },
-              {
-                "mode": "NULLABLE",
-                "name": "load_duration_ms",
-                "type": "FLOAT64"
-              },
-              {
-                "mode": "NULLABLE",
-                "name": "loader_name",
-                "type": "STRING"
-              },
-              {
-                "mode": "NULLABLE",
-                "name": "module_name",
-                "type": "STRING"
-              },
-              {
-                "mode": "NULLABLE",
-                "name": "module_trust_flags",
-                "type": "FLOAT64"
-              }
-            ],
-            "mode": "REPEATED",
-            "name": "modules",
-            "type": "RECORD"
-          },
-          {
-            "mode": "NULLABLE",
-            "name": "process_uptime_ms",
-            "type": "FLOAT64"
-          },
-          {
-            "mode": "NULLABLE",
-            "name": "thread_id",
-            "type": "INT64"
-          },
-          {
-            "mode": "NULLABLE",
-            "name": "thread_name",
-            "type": "STRING"
-          }
-        ],
-        "mode": "REPEATED",
-        "name": "events",
-        "type": "RECORD"
-      },
-      {
-        "mode": "NULLABLE",
-        "name": "struct_version",
-        "type": "INT64"
-      },
-      {
-        "mode": "NULLABLE",
-        "name": "xul_load_duration_ms",
-        "type": "FLOAT64"
       }
     ],
     "mode": "NULLABLE",
@@ -1801,11 +1631,6 @@
     "mode": "NULLABLE",
     "name": "submission_timestamp",
     "type": "TIMESTAMP"
-  },
-  {
-    "mode": "NULLABLE",
-    "name": "type",
-    "type": "STRING"
   },
   {
     "mode": "NULLABLE",

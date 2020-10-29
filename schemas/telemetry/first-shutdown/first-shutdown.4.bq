@@ -724,6 +724,12 @@
             "type": "INT64"
           },
           {
+            "description": "whether fission is enabled this session, and subframes can load in a different process",
+            "mode": "NULLABLE",
+            "name": "fission_enabled",
+            "type": "BOOL"
+          },
+          {
             "fields": [
               {
                 "mode": "REPEATED",
@@ -6751,6 +6757,12 @@
             "type": "STRING"
           },
           {
+            "description": "The reason why a HTTP transaction is restarted.",
+            "mode": "NULLABLE",
+            "name": "http_transaction_restart_reason",
+            "type": "STRING"
+          },
+          {
             "description": "Whether a HTTP transaction was routed via Alt-Svc or not.",
             "mode": "NULLABLE",
             "name": "http_transaction_use_altsvc",
@@ -7210,6 +7222,18 @@
             "description": "Records whether tunneled playback is supported by a video decoder when creating it.",
             "mode": "NULLABLE",
             "name": "media_android_video_tunneling_support",
+            "type": "STRING"
+          },
+          {
+            "description": "Counts the number of times users enable and use media control on different platforms.",
+            "mode": "NULLABLE",
+            "name": "media_control_platform_usage",
+            "type": "STRING"
+          },
+          {
+            "description": "Counts the number of times a user enable or disable the media control feature via UI button, and the total number of times media control feature is enabled and disabled, which allow us to calculate the number of times a user changes setting via modifying the preference directly.",
+            "mode": "NULLABLE",
+            "name": "media_control_setting_change",
             "type": "STRING"
           },
           {
@@ -10039,6 +10063,18 @@
             "type": "STRING"
           },
           {
+            "description": "A count of the granted storage access. ('StorageGranted' = There was a storage access granted, 'StorageAccessAPI' = the storage access was granted by the storage access API, 'OpenerAfterUserInteraction' = the storage access was granted due to the heuristic 'OpenerAfterUserInteraction', 'Opener' = the storage access was granted due to the heuristic 'Opener', 'Redirect' = the storage access was granted due to the heuristic 'Redirect'.) Note, StorageGranted is used as a baseline measurement.",
+            "mode": "NULLABLE",
+            "name": "storage_access_granted_count",
+            "type": "STRING"
+          },
+          {
+            "description": "The time remaining until expiration per storage access permissions, in days (one record per permission, not averaged).",
+            "mode": "NULLABLE",
+            "name": "storage_access_remaining_days",
+            "type": "STRING"
+          },
+          {
             "description": "Number of OnSocketReady calls during a single poll.",
             "mode": "NULLABLE",
             "name": "sts_number_of_onsocketready_calls",
@@ -12283,6 +12319,18 @@
             "type": "STRING"
           },
           {
+            "description": "Whether a document how often bug 1484928 can cause trouble.",
+            "mode": "NULLABLE",
+            "name": "use_counter2_contenturlonimagecontent_document",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a page how often bug 1484928 can cause trouble.",
+            "mode": "NULLABLE",
+            "name": "use_counter2_contenturlonimagecontent_page",
+            "type": "STRING"
+          },
+          {
             "description": "Whether a document used the CSS property align-content",
             "mode": "NULLABLE",
             "name": "use_counter2_css_property_align_content_document",
@@ -12316,6 +12364,18 @@
             "description": "Whether a page used the CSS property align-self",
             "mode": "NULLABLE",
             "name": "use_counter2_css_property_align_self_page",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a document used the CSS property align-tracks",
+            "mode": "NULLABLE",
+            "name": "use_counter2_css_property_align_tracks_document",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a page used the CSS property align-tracks",
+            "mode": "NULLABLE",
+            "name": "use_counter2_css_property_align_tracks_page",
             "type": "STRING"
           },
           {
@@ -12460,6 +12520,18 @@
             "description": "Whether a page used the CSS property appearance",
             "mode": "NULLABLE",
             "name": "use_counter2_css_property_appearance_page",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a document used the CSS property aspect-ratio",
+            "mode": "NULLABLE",
+            "name": "use_counter2_css_property_aspect_ratio_document",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a page used the CSS property aspect-ratio",
+            "mode": "NULLABLE",
+            "name": "use_counter2_css_property_aspect_ratio_page",
             "type": "STRING"
           },
           {
@@ -14743,6 +14815,18 @@
             "type": "STRING"
           },
           {
+            "description": "Whether a document used the CSS property justify-tracks",
+            "mode": "NULLABLE",
+            "name": "use_counter2_css_property_justify_tracks_document",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a page used the CSS property justify-tracks",
+            "mode": "NULLABLE",
+            "name": "use_counter2_css_property_justify_tracks_page",
+            "type": "STRING"
+          },
+          {
             "description": "Whether a document used the CSS property left",
             "mode": "NULLABLE",
             "name": "use_counter2_css_property_left_document",
@@ -15172,6 +15256,18 @@
             "description": "Whether a page used the CSS property mask-type",
             "mode": "NULLABLE",
             "name": "use_counter2_css_property_mask_type_page",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a document used the CSS property masonry-auto-flow",
+            "mode": "NULLABLE",
+            "name": "use_counter2_css_property_masonry_auto_flow_document",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a page used the CSS property masonry-auto-flow",
+            "mode": "NULLABLE",
+            "name": "use_counter2_css_property_masonry_auto_flow_page",
             "type": "STRING"
           },
           {
@@ -21352,6 +21448,30 @@
             "description": "Whether a page called Element.attachShadow",
             "mode": "NULLABLE",
             "name": "use_counter2_element_attachshadow_page",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a document called Element.releaseCapture",
+            "mode": "NULLABLE",
+            "name": "use_counter2_element_releasecapture_document",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a page called Element.releaseCapture",
+            "mode": "NULLABLE",
+            "name": "use_counter2_element_releasecapture_page",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a document called Element.setCapture",
+            "mode": "NULLABLE",
+            "name": "use_counter2_element_setcapture_document",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a page called Element.setCapture",
+            "mode": "NULLABLE",
+            "name": "use_counter2_element_setcapture_page",
             "type": "STRING"
           },
           {
@@ -34259,6 +34379,12 @@
                     "type": "STRING"
                   },
                   {
+                    "description": "The number of times `play/pause/stop` actions are being handled on either default handler or media session action handler.",
+                    "mode": "NULLABLE",
+                    "name": "media_control_handle_play_pause_stop_actions",
+                    "type": "STRING"
+                  },
+                  {
                     "description": "Media decoder backend (0=WMF Software, 1=DXVA2D3D9, 2=DXVA2D3D11)",
                     "mode": "NULLABLE",
                     "name": "media_decoder_backend_used",
@@ -35321,9 +35447,57 @@
                     "type": "STRING"
                   },
                   {
+                    "description": "Time in milliseconds from responseStart to domContentLoaded for the foreground http or https root content document.",
+                    "mode": "NULLABLE",
+                    "name": "perf_dom_content_loaded_time_from_responsestart_ms",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Time in milliseconds from navigationStart to domContentLoaded for the foreground http or https root content document.",
+                    "mode": "NULLABLE",
+                    "name": "perf_dom_content_loaded_time_ms",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "The time between responseStart and the first contentful paint of a foreground http or https root content document, in milliseconds. The contentful paint timestamp is taken during display list building and does not include rasterization or compositing of that paint.",
+                    "mode": "NULLABLE",
+                    "name": "perf_first_contentful_paint_from_responsestart_ms",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "The time between navigationStart and the first contentful paint of a foreground http or https root content document, in milliseconds. The contentful paint timestamp is taken during display list building and does not include rasterization or compositing of that paint.",
+                    "mode": "NULLABLE",
+                    "name": "perf_first_contentful_paint_ms",
+                    "type": "STRING"
+                  },
+                  {
                     "description": "Proportion (%) of reschedulings of the main process to another CPU during the execution of code inside a JS compartment. Updated while we are measuring jank.",
                     "mode": "NULLABLE",
                     "name": "perf_monitoring_test_cpu_rescheduling_proportion_moved",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Time in milliseconds from responseStart to loadEventStart for the foreground http or https root content document.",
+                    "mode": "NULLABLE",
+                    "name": "perf_page_load_time_from_responsestart_ms",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Time in milliseconds from navigationStart to loadEventStart for the foreground http or https root content document.",
+                    "mode": "NULLABLE",
+                    "name": "perf_page_load_time_ms",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Time spent in milliseconds calling all request animation frame callbacks for a document after it has reached readystate complete.",
+                    "mode": "NULLABLE",
+                    "name": "perf_request_animation_callback_non_pageload_ms",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Time spent in milliseconds calling all request animation frame callbacks for a document before it has reached readystate complete.",
+                    "mode": "NULLABLE",
+                    "name": "perf_request_animation_callback_pageload_ms",
                     "type": "STRING"
                   },
                   {
@@ -36884,6 +37058,12 @@
                     "description": "Storage Access API UI events.",
                     "mode": "NULLABLE",
                     "name": "storage_access_api_ui",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "A count of the granted storage access. ('StorageGranted' = There was a storage access granted, 'StorageAccessAPI' = the storage access was granted by the storage access API, 'OpenerAfterUserInteraction' = the storage access was granted due to the heuristic 'OpenerAfterUserInteraction', 'Opener' = the storage access was granted due to the heuristic 'Opener', 'Redirect' = the storage access was granted due to the heuristic 'Redirect'.) Note, StorageGranted is used as a baseline measurement.",
+                    "mode": "NULLABLE",
+                    "name": "storage_access_granted_count",
                     "type": "STRING"
                   },
                   {
@@ -39035,6 +39215,18 @@
                     "type": "STRING"
                   },
                   {
+                    "description": "Whether a document how often bug 1484928 can cause trouble.",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_contenturlonimagecontent_document",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a page how often bug 1484928 can cause trouble.",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_contenturlonimagecontent_page",
+                    "type": "STRING"
+                  },
+                  {
                     "description": "Whether a document used the CSS property align-content",
                     "mode": "NULLABLE",
                     "name": "use_counter2_css_property_align_content_document",
@@ -39068,6 +39260,18 @@
                     "description": "Whether a page used the CSS property align-self",
                     "mode": "NULLABLE",
                     "name": "use_counter2_css_property_align_self_page",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a document used the CSS property align-tracks",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_css_property_align_tracks_document",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a page used the CSS property align-tracks",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_css_property_align_tracks_page",
                     "type": "STRING"
                   },
                   {
@@ -39212,6 +39416,18 @@
                     "description": "Whether a page used the CSS property appearance",
                     "mode": "NULLABLE",
                     "name": "use_counter2_css_property_appearance_page",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a document used the CSS property aspect-ratio",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_css_property_aspect_ratio_document",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a page used the CSS property aspect-ratio",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_css_property_aspect_ratio_page",
                     "type": "STRING"
                   },
                   {
@@ -41495,6 +41711,18 @@
                     "type": "STRING"
                   },
                   {
+                    "description": "Whether a document used the CSS property justify-tracks",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_css_property_justify_tracks_document",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a page used the CSS property justify-tracks",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_css_property_justify_tracks_page",
+                    "type": "STRING"
+                  },
+                  {
                     "description": "Whether a document used the CSS property left",
                     "mode": "NULLABLE",
                     "name": "use_counter2_css_property_left_document",
@@ -41924,6 +42152,18 @@
                     "description": "Whether a page used the CSS property mask-type",
                     "mode": "NULLABLE",
                     "name": "use_counter2_css_property_mask_type_page",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a document used the CSS property masonry-auto-flow",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_css_property_masonry_auto_flow_document",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a page used the CSS property masonry-auto-flow",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_css_property_masonry_auto_flow_page",
                     "type": "STRING"
                   },
                   {
@@ -48104,6 +48344,30 @@
                     "description": "Whether a page called Element.attachShadow",
                     "mode": "NULLABLE",
                     "name": "use_counter2_element_attachshadow_page",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a document called Element.releaseCapture",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_element_releasecapture_document",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a page called Element.releaseCapture",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_element_releasecapture_page",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a document called Element.setCapture",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_element_setcapture_document",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a page called Element.setCapture",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_element_setcapture_page",
                     "type": "STRING"
                   },
                   {
@@ -57266,6 +57530,24 @@
                         "type": "STRING"
                       },
                       {
+                        "description": "Records the WebExtension ID of a search engine where the WebExtension is not installed (= 1), disabled (= 2) or where the submission URL is different between the search engine and the WebExtension (= 3)\n",
+                        "mode": "NULLABLE",
+                        "name": "value",
+                        "type": "INT64"
+                      }
+                    ],
+                    "mode": "REPEATED",
+                    "name": "browser_searchinit_engine_invalid_webextension",
+                    "type": "RECORD"
+                  },
+                  {
+                    "fields": [
+                      {
+                        "mode": "NULLABLE",
+                        "name": "key",
+                        "type": "STRING"
+                      },
+                      {
                         "description": "Records when widgets are added, removed or moved in the UI. See https://firefox-source-docs.mozilla.org/browser/BrowserUsageTelemetry.html\n",
                         "mode": "NULLABLE",
                         "name": "value",
@@ -58714,6 +58996,24 @@
                     ],
                     "mode": "REPEATED",
                     "name": "urlbar_searchmode_tabtosearch",
+                    "type": "RECORD"
+                  },
+                  {
+                    "fields": [
+                      {
+                        "mode": "NULLABLE",
+                        "name": "key",
+                        "type": "STRING"
+                      },
+                      {
+                        "description": "A keyed uint recording how many times the user entered a particular search mode after selecting a tab-to-search onboarding result.\n",
+                        "mode": "NULLABLE",
+                        "name": "value",
+                        "type": "INT64"
+                      }
+                    ],
+                    "mode": "REPEATED",
+                    "name": "urlbar_searchmode_tabtosearch_onboard",
                     "type": "RECORD"
                   },
                   {
@@ -60386,6 +60686,12 @@
                     "type": "STRING"
                   },
                   {
+                    "description": "The number of times the Telemetry Environment notified listeners of environment changes despite the old and new environment contents being equal.\n",
+                    "mode": "NULLABLE",
+                    "name": "telemetry_environment_didnt_change",
+                    "type": "INT64"
+                  },
+                  {
                     "description": "The number of times a late write stack failed to be parsed.\n",
                     "mode": "NULLABLE",
                     "name": "telemetry_failed_late_write",
@@ -60816,6 +61122,18 @@
                     "mode": "NULLABLE",
                     "name": "widget_gtk_theme_has_scrollbar_buttons",
                     "type": "BOOL"
+                  },
+                  {
+                    "description": "Whether the active Gtk theme uses background images for its scrollbar parts.\n",
+                    "mode": "NULLABLE",
+                    "name": "widget_gtk_theme_scrollbar_uses_images",
+                    "type": "BOOL"
+                  },
+                  {
+                    "description": "The version of Gtk 3 in use.\n",
+                    "mode": "NULLABLE",
+                    "name": "widget_gtk_version",
+                    "type": "STRING"
                   }
                 ],
                 "mode": "NULLABLE",

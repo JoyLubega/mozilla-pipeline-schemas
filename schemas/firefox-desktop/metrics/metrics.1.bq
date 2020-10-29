@@ -290,6 +290,12 @@
       {
         "fields": [
           {
+            "description": "The number of times the ipc buffer failed to be replayed in the\nparent process.\n",
+            "mode": "NULLABLE",
+            "name": "fog_ipc_replay_failures",
+            "type": "INT64"
+          },
+          {
             "description": "The number of tasks queued in the pre-initialization buffer.\nOnly sent if the buffer overflows.\n",
             "mode": "NULLABLE",
             "name": "glean_error_preinit_tasks_overflow",

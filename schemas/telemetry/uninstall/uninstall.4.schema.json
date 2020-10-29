@@ -3,7 +3,7 @@
   "mozPipelineMetadata": {
     "bq_dataset_family": "telemetry",
     "bq_metadata_format": "telemetry",
-    "bq_table": "shield_icq_v1_v4"
+    "bq_table": "uninstall_v4"
   },
   "properties": {
     "application": {
@@ -1317,78 +1317,13 @@
     },
     "payload": {
       "properties": {
-        "connType": {
-          "enum": [
-            "slow-2g",
-            "2g",
-            "3g",
-            "4g",
-            "unknown"
-          ],
-          "type": "string"
-        },
-        "fileSize": {
-          "type": "number"
-        },
-        "goodput": {
-          "items": {
-            "additionalItems": false,
-            "items": [
-              {
-                "type": "number"
-              },
-              {
-                "type": "number"
-              }
-            ],
-            "type": "array"
-          },
-          "type": "array"
-        },
-        "latency": {
-          "type": "number"
-        },
-        "reason": {
-          "enum": [
-            "progress",
-            "final",
-            "error"
-          ],
-          "type": "string"
-        },
-        "type": {
-          "oneOf": [
-            {
-              "enum": [
-                "wrong-status",
-                "missing-performance",
-                "request-aborted",
-                "request-error"
-              ],
-              "type": "string"
-            },
-            {
-              "maxLength": 0,
-              "type": "string"
-            }
-          ]
+        "otherInstalls": {
+          "maximum": 11,
+          "minimum": 0,
+          "type": "integer"
         }
       },
-      "required": [
-        "reason",
-        "type",
-        "latency",
-        "fileSize",
-        "connType",
-        "goodput"
-      ],
       "type": "object"
-    },
-    "type": {
-      "enum": [
-        "shield-icq-v1"
-      ],
-      "type": "string"
     },
     "version": {
       "maximum": 4,
@@ -1403,9 +1338,8 @@
     "environment",
     "id",
     "payload",
-    "type",
     "version"
   ],
-  "title": "shield-icq-v1",
+  "title": "uninstall",
   "type": "object"
 }
