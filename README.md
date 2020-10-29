@@ -1,14 +1,13 @@
-    ## Generated Schemas
+# Generated Schemas
 
-    ### Summary: 
+Summary: 
+Create the JSON Schema in the templates directory first. Make use of common schema components
+from the templates/include directory where possible, including things like the telemetry environment,
+clientId, application block, or UUID patterns. 
+The filename should be templates/<namespace>/<doctype>/<doctype>.<version>.schema.json
 
-    Create the JSON Schema in the templates directory first. Make use of common schema components
-    from the templates/include directory where possible, including things like the telemetry environment,
-    clientId, application block, or UUID patterns. 
-    The filename should be templates/<namespace>/<doctype>/<doctype>.<version>.schema.json
-
-    ### Directory tree: 
-    .
+Directory tree: 
+.
 ├── CMakeLists.txt
 ├── CODE_OF_CONDUCT.md
 ├── Dockerfile
@@ -1565,8 +1564,8 @@
 
 496 directories, 1057 files
 
-    ### Last month's commit Logs: 
-     
+Last month's commit Logs:
+
 * dda5d19d : Add schema for CITP's Pioneer study (#632) by akohlbre
 * 7ad71b31 : Add fissionEnabled to new uninstall ping (#631) by Jeff Klukas
 * 0f34b318 : Bug 1461690 - Add Uninstall Telemetry ping schema (#629) by Adam Gashlin
